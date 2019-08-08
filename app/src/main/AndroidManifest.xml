@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ukk1451070.ac.kingston.httpkunet.transporttracker">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Old.OriginJSON" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBfL648DK3GYKLJMgZkPeK6MaBBNiG8FWQ" />
+
+        <activity
+            android:name=".Journey.MapsActivity"
+            android:label="@string/title_activity_maps">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ukk1451070.ac.kingston.httpkunet.transporttracker.Old.OriginJSON" />
+        </activity>
+        <activity android:name=".Old.DestinationJSON" />
+        <activity android:name=".Old.OriginSearch" />
+        <activity android:name=".Old.DestinationSearch" />
+        <activity
+            android:name=".Database.Saved_Routes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Database.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Journey.Route" />
+        <activity
+            android:name=".Journey.Search"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Old.RouteJSON" />
+        <activity android:name=".Journey.Live" />
+        <activity android:name=".Journey.Position" />
+        <activity android:name=".Journey.StationJSON" />
+        <activity android:name=".Journey.Train.TJPartOrigin" />
+        <activity android:name=".Journey.Train.TJPartRoute" />
+        <activity android:name=".Journey.Train.TJPartDestination" />
+        <activity android:name=".Journey.Other.OJPartOrigin" />
+        <activity android:name=".Journey.Other.OJPartDestination" />
+        <activity android:name=".Journey.Other.OJPartRoute" />
+        <activity android:name=".Journey.FailSafe" />
+        <activity android:name=".Journey.FailSafes.FailSafeOD" />
+        <activity android:name=".Journey.FailSafes.FailSafeTO" />
+        <activity android:name=".Journey.FailSafes.FailSafeTD" />
+        <activity android:name=".Database.SaveRoute" />
+        <activity android:name=".Database.viewRoute"></activity>
+    </application>
+
+</manifest>
